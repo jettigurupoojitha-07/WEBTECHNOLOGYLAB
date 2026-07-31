@@ -1,0 +1,369 @@
+<!--EXPERIMENT 3-->
+<!--URK24CS1160-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Technology Course</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="header">
+
+    <div class="title">
+        <h1>Web Technology Course</h1>
+        <p>Learn HTML5, CSS3, JavaScript and PHP through Responsive Web Design</p>
+    </div>
+
+    <div class="top-icons">
+        <span>◀</span>
+        <span>▶</span>
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Courses</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+        <a href="#">About</a>
+    </nav>
+
+</header>
+
+<!-- Introduction -->
+<section class="intro">
+
+    <h2>Welcome to Web Technology</h2>
+
+    <p>
+        Learn modern web technologies to build attractive, responsive,
+        and interactive websites.
+    </p>
+
+</section>
+
+<!-- Technology Section -->
+<section class="technologies">
+
+    <div class="tech html">
+        <img src="html.jpg" alt="HTML5">
+        <h3>HTML5</h3>
+        <p>Provides the structure and content of modern web pages.</p>
+    </div>
+
+    <div class="tech css">
+        <img src="css.jpg" alt="CSS3">
+        <h3>CSS3</h3>
+        <p>Styles web pages with attractive layouts and responsive designs.</p>
+    </div>
+
+    <div class="tech javascript">
+        <img src="js.jpg" alt="JavaScript">
+        <h3>JavaScript</h3>
+        <p>Adds dynamic features and interactivity to websites.</p>
+    </div>
+
+    <div class="tech php">
+        <img src="php.jpg" alt="PHP">
+        <h3>PHP</h3>
+        <p>Creates dynamic and database-driven web applications.</p>
+    </div>
+
+</section>
+
+<!-- Profile Section -->
+<section class="profiles">
+
+    <!-- Brother & Sister -->
+    <div class="profile-box">
+        <img src="profile1.pg.jpeg" alt="Brother and Sister">
+        <h3>Brother & Sister</h3>
+        <p>
+            The bond between a brother and sister is filled with love,
+            friendship, support, and unforgettable childhood memories.
+        </p>
+    </div>
+
+    <!-- Mother & Daughter -->
+    <div class="profile-box">
+        <img src="family.jpg.jpeg" alt="Mother and Daughter">
+        <h3>Mother & Daughter</h3>
+        <p>
+            A mother and daughter share a special relationship built on
+            unconditional love, care, trust, and lifelong guidance.
+        </p>
+    </div>
+
+    <!-- Python -->
+    <div class="profile-box">
+        <img src="python.jpg" alt="Python Programming">
+        <h3>Python Programming</h3>
+        <p>
+            Python is a powerful programming language used for web
+            development, artificial intelligence, automation, and data science.
+        </p>
+    </div>
+
+    <!-- Family -->
+    <div class="profile-box">
+        <img src="profile2.pg.webp" alt="Family">
+        <h3>Family</h3>
+        <p>
+            Family is the foundation of love, happiness, and support,
+            inspiring us to grow stronger together every day.
+        </p>
+    </div>
+
+    <!-- Future Web Developer -->
+    <div class="profile-box">
+        <img src="brothersister.jpg" alt="Brother and sister">
+        <h3>Future Web Developer</h3>
+        <p>
+           The bond between a brother and sister is filled with love,
+            friendship, support, and unforgettable childhood memories.
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+
+    <p>Department of Computer Science and Engineering</p>
+
+    <p>Web Technology Laboratory</p>
+
+    <p>&copy; 2026 Web Technology Lab. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>
+
+
+
+STYLE.CSS
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eeeeee;
+}
+
+/* HEADER */
+
+.header {
+    width: 100%;
+    background: linear-gradient(90deg, #7b1fa2, #8e24aa);
+    color: white;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+}
+
+.profile {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+}
+
+.profile img {
+    width: 55px;
+    height: 55px;
+    border-radius: 5px;
+}
+
+.title h1 {
+    margin: 8px 0;
+    font-size: 20px;
+}
+
+.title p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.top-icons {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.top-icons span {
+    background: white;
+    color: #7b1fa2;
+    padding: 3px 5px;
+    margin: 2px;
+}
+
+/* NAVIGATION */
+
+nav {
+    margin-top: 10px;
+    background: #b3e5e5;
+    padding: 5px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 25px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #7b1fa2;
+}
+
+/* INTRO */
+
+.intro {
+    background: #238fa0;
+    color: white;
+    text-align: center;
+    padding: 18px;
+}
+
+.intro h2 {
+    margin: 0 0 8px;
+    font-size: 20px;
+}
+
+.intro p {
+    margin: 0;
+    font-size: 13px;
+}
+
+/* TECHNOLOGIES */
+
+.technologies {
+    display: flex;
+    justify-content: space-around;;
+    flex-wrap:wrap;
+    padding: 20px;
+    background: #f2f2f2;
+}
+
+.tech{
+    width:23%;
+    background:#3f4f59;
+    color:white;
+    display:inline-block;
+    vertical-align:top;
+    margin:8px;
+    padding:15px;
+    box-sizing:border-box;
+    text-align:center;
+    min-height:180px;   /* Increased height */
+}
+
+.tech img{
+    width:60px;
+    height:60px;
+}
+
+.tech h3 {
+   margin:10px 0;
+   font-size:28px;
+}
+
+.tech p{
+    font-size:16px;
+    line-height:1.5;
+    margin-top:10px;
+    color:white;
+}
+
+.html {
+    background: #263238;
+}
+
+.css {
+    background: #37474f;
+}
+
+.javascript {
+    background: #455a64;
+}
+
+.php {
+    background: #546e7a;
+}
+
+/* PROFILE SECTION */
+
+.profiles {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #0277a8;
+    padding: 15px;
+}
+
+.profile-box {
+    width: 28%;
+    text-align: center;
+    color: white;
+}
+
+.profile-box img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.profile-box h3 {
+    margin: 5px;
+    font-size: 14px;
+}
+
+.profile-box p {
+    font-size: 11px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #eeeeee;
+    text-align: left;
+    padding: 10px 20px;
+    font-size: 10px;
+    color: #555;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .technologies {
+        flex-wrap: wrap;
+    }
+
+    .tech {
+        width: 45%;
+    }
+
+    .profiles {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-box {
+        width: 80%;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+}
+
+
