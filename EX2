@@ -1,0 +1,163 @@
+<!--EXPERIMENT 2 --->
+<!--URK24CS1160 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Experiment 2</title>
+</head>
+<body>
+    <h1>My First Web Page</h1>
+    <h2>Web Technology Lab</h2>
+    <h3>HTML Experiment</h3>
+
+    <hr>
+    <p>
+        HTML (HyperText Markup Language) is the standard language used to create web pages.
+        It provides the basic structure of a webpage.
+    </p>
+
+    <hr>
+    <h3>Text Formatting Tags</h3>
+    
+
+<b>Bold Text</b><br><br>
+
+<i>Italic Text</i><br><br>
+
+<u>Underlined Text</u><br><br>
+
+<strong>Strong (Important) Text</strong><br><br>
+
+<em>Emphasized Text</em><br><br>
+
+<mark>Highlighted Text</mark><br><br>
+
+<small>Small Text</small><br><br>
+
+<del>Deleted Text</del><br><br>
+
+<ins>Inserted Text</ins><br><br>
+
+Water Formula: H<sub>2</sub>O<br><br>
+
+Mathematical Formula: x<sup>2</sup> + y<sup>2</sup><br><br>
+
+<code>System.out.println("Hello World");</code><br><br>
+
+<kbd>Ctrl + C</kbd> is used to Copy.<br><br>
+
+<q>Knowledge is Power.</q><br><br>
+
+<pre>
+This is preformatted text.
+Spacing and line breaks are preserved.
+</pre>
+
+
+<hr>
+
+<h3>Audio</h3>
+
+<audio controls>
+    <source src="song.wav" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<hr>
+
+<h3>Video</h3>
+
+<video width="500" height="300" controls>
+    <source src="sample.mp4" type="video/mp4">
+    Your browser does not support the video element.
+</video>
+    <b>Bold Text</b><br><br>
+
+    <i>Italic Text</i><br><br>
+
+    <u>Underlined Text</u><br><br>
+
+    <strong>Strong Text</strong><br><br>
+
+    <em>Emphasized Text</em><br><br>
+
+    <mark>Highlighted Text</mark><br><br>
+
+    <small>Small Text</small><br><br>
+
+    <del>Deleted Text</del><br><br>
+
+    <ins>Inserted Text</ins><br><br>
+
+    Water Formula: H<sub>2</sub>O<br><br>
+
+    Mathematical Formula: x<sup>2</sup><br>
+
+    <hr>
+    <h3>Image</h3>
+
+    <img src="profile.PNG" alt="Profile Image" width="250" height="250">
+
+    <hr>
+    <h3>Useful Links</h3>
+
+    <a href="https://www.google.com" target="_blank">Google</a>
+    <br><br>
+
+    <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a>
+
+    <hr>
+    <h3>Programming Languages</h3>
+
+    <ol>
+        <li>Python</li>
+        <li>Java</li>
+        <li>C</li>
+        <li>C++</li>
+    </ol>
+    <h3>Subjects</h3>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <hr>
+    <h3>Student Details</h3>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Year</th>
+        </tr>
+
+        <tr>
+            <td>Guru Poojitha</td>
+            <td>CSE</td>
+            <td>III</td>
+        </tr>
+
+        <tr>
+            <td>Shriya</td>
+            <td>AI</td>
+            <td>IV</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h3>Line Break Example</h3>
+
+    This is the first line.<br>
+    This is the second line.<br>
+    This is the third line.
+
+    <hr>
+
+
+
+</body>
+</html>
