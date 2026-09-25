@@ -1,0 +1,1892 @@
+//ADDITION.HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Addition Calculator</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .container {
+            width: 350px;
+            margin: 40px auto;
+        }
+
+        h2 {
+            color: #174ea6;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            height: 30px;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 8px;
+            background-color: #1268e8;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: lightblue;
+            color: #174ea6;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Addition Calculator</h2>
+
+    <label>Number 1:</label>
+    <input type="text" id="num1" placeholder="Number 1">
+
+
+    <label>Number 2:</label>
+    <input type="text" id="num2" placeholder="Number 2">
+
+
+    <button id="add">
+        Addition
+    </button>
+
+
+    <div class="result">
+        Result: <span id="answer">0</span>
+    </div>
+
+</div>
+
+
+<script>
+
+$(document).ready(function() {
+
+    $("#add").click(function() {
+
+        // Read values
+        let num1 = parseInt($("#num1").val());
+
+        let num2 = parseInt($("#num2").val());
+
+
+        // Add numbers
+        let sum = num1 + num2;
+
+
+        // Display result
+        $("#answer").text(sum);
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
+
+//BUDGETCALCULATOR
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Budget Calculator App</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            width: 600px;
+            margin: 30px auto;
+        }
+
+        /* Heading */
+        .title {
+            background-color: black;
+            color: white;
+            padding: 6px;
+            font-weight: bold;
+        }
+
+        .question {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        #amount {
+            width: 70px;
+            height: 25px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Percentage inputs */
+        .percentage {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .percentage label {
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .percentage input {
+            width: 40px;
+            height: 22px;
+            text-align: center;
+        }
+
+        /* Button */
+        #evaluate {
+            margin-top: 15px;
+            padding: 7px 10px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Result boxes */
+        .results {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .box {
+            width: 85px;
+            height: 55px;
+            color: white;
+            padding: 7px;
+            box-sizing: border-box;
+            font-size: 11px;
+            text-align: left;
+        }
+
+        #roomResult {
+            background-color: blue;
+        }
+
+        #accessoriesResult {
+            background-color: green;
+        }
+
+        #emergencyResult {
+            background-color: royalblue;
+        }
+
+        #savingResult {
+            background-color: deeppink;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="title">
+        Budget Calculator App
+    </div>
+
+    <div class="question">
+        Enter Amount that you want to Manage
+    </div>
+
+    <input type="number" id="amount" value="15000">
+
+
+    <div class="question">
+        How would you like to divide your money?
+    </div>
+
+
+    <div class="percentage">
+
+        <div>
+            <label>Room Rent(%):</label>
+            <input type="number" id="room" value="50">
+        </div>
+
+        <div>
+            <label>Accessories(%):</label>
+            <input type="number" id="accessories" value="20">
+        </div>
+
+        <div>
+            <label>Emergency(%):</label>
+            <input type="number" id="emergency" value="20">
+        </div>
+
+        <div>
+            <label>Saving(%):</label>
+            <input type="number" id="saving" value="10">
+        </div>
+
+    </div>
+
+
+    <button id="evaluate">
+        Evaluate My Money
+    </button>
+
+
+    <div class="results">
+
+        <div class="box" id="roomResult">
+            Room Rent<br>
+            <span>Rs.0</span>
+        </div>
+
+        <div class="box" id="accessoriesResult">
+            Accessories<br>
+            <span>Rs.0</span>
+        </div>
+
+        <div class="box" id="emergencyResult">
+            Emergency<br>
+            <span>Rs.0</span>
+        </div>
+
+        <div class="box" id="savingResult">
+            Saving<br>
+            <span>Rs.0</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+$(document).ready(function() {
+
+    $("#evaluate").click(function() {
+
+        // Get values
+        var amount = Number($("#amount").val());
+
+        var room = Number($("#room").val());
+
+        var accessories = Number($("#accessories").val());
+
+        var emergency = Number($("#emergency").val());
+
+        var saving = Number($("#saving").val());
+
+
+        // Check percentage
+        var totalPercentage =
+            room + accessories + emergency + saving;
+
+
+        if (totalPercentage != 100) {
+
+            alert("Percentage values must add up to 100%.");
+
+            return;
+        }
+
+
+        // Calculate amounts
+        var roomAmount =
+            amount * room / 100;
+
+        var accessoriesAmount =
+            amount * accessories / 100;
+
+        var emergencyAmount =
+            amount * emergency / 100;
+
+        var savingAmount =
+            amount * saving / 100;
+
+
+        // Display results
+        $("#roomResult span")
+            .text("Rs." + roomAmount);
+
+        $("#accessoriesResult span")
+            .text("Rs." + accessoriesAmount);
+
+        $("#emergencyResult span")
+            .text("Rs." + emergencyAmount);
+
+        $("#savingResult span")
+            .text("Rs." + savingAmount);
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
+
+
+//CAKESHOP
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cake Shop</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            width: 625px;
+            margin: 30px auto;
+        }
+
+        /* Cake Shop heading */
+        .shop-title {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            font-size: 22px;
+        }
+
+        /* Cake images */
+        .cakes {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .cake {
+            width: 140px;
+        }
+
+        .cake img {
+            width: 130px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .cake p {
+            font-size: 12px;
+            margin: 2px;
+        }
+
+        /* Order Cake */
+        h2 {
+            color: #0878d1;
+            margin-top: 25px;
+        }
+
+        .order-box {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            color: #0878d1;
+            font-size: 20px;
+            margin-top: 8px;
+        }
+
+        input {
+            width: 100%;
+            height: 30px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        #placeOrder {
+            margin-top: 15px;
+            padding: 5px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Bill */
+        .bill {
+            border-top: 2px solid #8b5cf6;
+            margin-top: 8px;
+            padding-top: 8px;
+        }
+
+        .bill h2 {
+            color: green;
+            margin: 0 0 5px 0;
+        }
+
+        .total-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .total-label {
+            background-color: #299b43;
+            color: white;
+            width: 200px;
+            padding: 6px;
+            font-size: 20px;
+        }
+
+        #total {
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SHOP TITLE -->
+    <div class="shop-title">
+        CAKE SHOP
+    </div>
+
+
+    <!-- CAKES -->
+
+    <div class="cakes">
+
+        <div class="cakes">
+
+    <div class="cake">
+        <img src="color.jpg" alt="Color Cake">
+        <p>Color Cake - Rs.300</p>
+    </div>
+
+    <div class="cake">
+        <img src="brown.jpg" alt="Brown Cake">
+        <p>Brown Cake - Rs.200</p>
+    </div>
+
+    <div class="cake">
+        <img src="milk.jpg" alt="Milky Cake">
+        <p>Milky Cake - Rs.250</p>
+    </div>
+
+    <div class="cake">
+        <img src="blackforest.jpg" alt="Black Forest Cake">
+        <p>Black Forest Cake - Rs.350</p>
+    </div>
+
+</div>
+    </div>
+
+
+    <!-- ORDER -->
+
+    <h2>Order Cake</h2>
+
+    <div class="order-box">
+
+        <label>Color Cake(Quantity)</label>
+        <input type="number" id="colorCake" value="2" min="0">
+
+
+        <label>Brown Cake(Quantity)</label>
+        <input type="number" id="brownCake" value="1" min="0">
+
+
+        <label>Milky Cake(Quantity)</label>
+        <input type="number" id="milkyCake" value="2" min="0">
+
+
+        <label>Black Forest Cake(Quantity)</label>
+        <input type="number" id="blackCake" value="1" min="0">
+
+
+        <button id="placeOrder">
+            Place Order
+        </button>
+
+    </div>
+
+
+    <!-- BILL -->
+
+    <div class="bill">
+
+        <h2>Purchase Order Bill!!</h2>
+
+        <div class="total-box">
+
+            <div class="total-label">
+                Total Price
+            </div>
+
+            <div id="total">
+                Rs.0
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- jQuery Code -->
+
+<script>
+
+$(document).ready(function() {
+
+    $("#placeOrder").click(function() {
+
+        // Get quantities
+        var color = Number($("#colorCake").val());
+        var brown = Number($("#brownCake").val());
+        var milky = Number($("#milkyCake").val());
+        var black = Number($("#blackCake").val());
+
+
+        // Calculate price
+        var total =
+            (color * 300) +
+            (brown * 200) +
+            (milky * 250) +
+            (black * 350);
+
+
+        // Display total
+        $("#total").text("Rs." + total);
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
+
+CARWORKSHOP
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Car Workshop</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2196f3;
+            margin-top: 20px;
+        }
+
+        .car-area {
+            width: 500px;
+            height: 230px;
+            margin: auto;
+        }
+
+        svg {
+            width: 350px;
+            height: 200px;
+        }
+
+        button {
+            margin: 10px 5px;
+            padding: 6px 10px;
+            background-color: white;
+            border: 1px solid #8bbdf2;
+            color: #4285f4;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e8f2ff;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <h2>3. Car Workshop</h2>
+
+
+    <div class="car-area">
+
+        <!-- CAR IMAGE -->
+
+        <svg viewBox="0 0 400 220">
+
+            <!-- Car body -->
+            <rect
+                id="carBody"
+                x="80"
+                y="100"
+                width="240"
+                height="55"
+                rx="5"
+                fill="limegreen">
+            </rect>
+
+
+            <!-- Car roof/body -->
+            <path
+                id="carTop"
+                d="M130 100 L150 55 L250 55 L270 100 Z"
+                fill="green">
+            </path>
+
+
+            <!-- Window -->
+            <path
+                d="M155 95 L165 65 L195 65 L195 95 Z"
+                fill="lightblue">
+            </path>
+
+
+            <path
+                d="M205 65 L235 65 L250 95 L205 95 Z"
+                fill="lightblue">
+            </path>
+
+
+            <!-- Left tyre -->
+            <circle
+                id="wheel1"
+                cx="135"
+                cy="165"
+                r="25"
+                fill="navy">
+            </circle>
+
+
+            <!-- Right tyre -->
+            <circle
+                id="wheel2"
+                cx="265"
+                cy="165"
+                r="25"
+                fill="navy">
+            </circle>
+
+        </svg>
+
+    </div>
+
+
+    <!-- BUTTONS -->
+
+    <button id="carColor">
+        Change Car Color
+    </button>
+
+
+    <button id="bodyColor">
+        Change Body Color
+    </button>
+
+
+    <button id="increaseTyre">
+        Tyre Size Increase
+    </button>
+
+
+    <button id="decreaseTyre">
+        Tyre Size Decrease
+    </button>
+
+
+    <button id="reset">
+        Reset
+    </button>
+
+
+<script>
+
+$(document).ready(function() {
+
+
+    // Change car color
+
+    $("#carColor").click(function() {
+
+        $("#carBody").attr("fill", "orange");
+
+    });
+
+
+    // Change body/roof color
+
+    $("#bodyColor").click(function() {
+
+        $("#carTop").attr("fill", "red");
+
+    });
+
+
+    // Increase tyre size
+
+    $("#increaseTyre").click(function() {
+
+        $("#wheel1").attr("r", "35");
+
+        $("#wheel2").attr("r", "35");
+
+    });
+
+
+    // Decrease tyre size
+
+    $("#decreaseTyre").click(function() {
+
+        $("#wheel1").attr("r", "18");
+
+        $("#wheel2").attr("r", "18");
+
+    });
+
+
+    // Reset everything
+
+    $("#reset").click(function() {
+
+        $("#carBody").attr("fill", "limegreen");
+
+        $("#carTop").attr("fill", "green");
+
+        $("#wheel1").attr("r", "25");
+
+        $("#wheel2").attr("r", "25");
+
+    });
+
+});
+
+</script>
+
+
+</body>
+</html>
+
+//EMPLOYEE MANAGEMENT
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Employee Management Dashboard</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        .container {
+            width: 750px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #174ea6;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+            width: 180px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            border: none;
+            background-color: #1976d2;
+            color: white;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #174ea6;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            border: 1px solid #999;
+            padding: 10px;
+        }
+
+        tr {
+            cursor: pointer;
+        }
+
+        .selected {
+            background-color: yellow;
+        }
+
+        #status {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #e8f5e9;
+            color: green;
+            font-weight: bold;
+        }
+
+        #dimensions {
+            margin-top: 10px;
+            color: blue;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>Employee Management Dashboard</h1>
+
+
+    <!-- Employee Inputs -->
+
+    <input type="text" id="empId" placeholder="Employee ID">
+
+    <input type="text" id="empName" placeholder="Employee Name">
+
+    <input type="text" id="department" placeholder="Department">
+
+    <br>
+
+
+    <!-- Buttons -->
+
+    <button id="add">
+        Add Employee
+    </button>
+
+    <button id="update">
+        Update Employee
+    </button>
+
+    <button id="remove">
+        Remove Employee
+    </button>
+
+    <button id="changeColor">
+        Change Status Color
+    </button>
+
+    <button id="dimensions">
+        Show Table Dimensions
+    </button>
+
+
+    <!-- Employee Table -->
+
+    <table id="employeeTable">
+
+        <thead>
+
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Department</th>
+            </tr>
+
+        </thead>
+
+
+        <tbody>
+
+            <tr>
+                <td>101</td>
+                <td>Riya</td>
+                <td>HR</td>
+            </tr>
+
+            <tr>
+                <td>102</td>
+                <td>Arjun</td>
+                <td>IT</td>
+            </tr>
+
+            <tr>
+                <td>103</td>
+                <td>Meera</td>
+                <td>Finance</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+
+    <div id="status">
+        Select an employee.
+    </div>
+
+
+    <div id="dimensionResult"></div>
+
+</div>
+
+
+<script>
+
+$(document).ready(function() {
+
+    let selectedRow = null;
+
+
+    // 1. GET - Select employee row
+
+    $("#employeeTable tbody").on("click", "tr", function() {
+
+        // Remove previous highlight
+
+        $("tr").removeClass("selected");
+
+
+        // Highlight selected row
+
+        $(this).addClass("selected");
+
+
+        // Store selected row
+
+        selectedRow = $(this);
+
+
+        // GET values using text()
+
+        let id = $(this).find("td:eq(0)").text();
+
+        let name = $(this).find("td:eq(1)").text();
+
+        let department = $(this).find("td:eq(2)").text();
+
+
+        // Put values into input boxes
+
+        $("#empId").val(id);
+
+        $("#empName").val(name);
+
+        $("#department").val(department);
+
+
+        $("#status").text(
+            "Selected employee details loaded."
+        );
+
+    });
+
+
+    // 2. ADD Employee
+
+    $("#add").click(function() {
+
+        let id = $("#empId").val();
+
+        let name = $("#empName").val();
+
+        let department = $("#department").val();
+
+
+        if (id == "" || name == "" || department == "") {
+
+            alert("Please enter all employee details.");
+
+            return;
+        }
+
+
+        // Add new row
+
+        $("#employeeTable tbody").append(
+
+            "<tr>" +
+            "<td>" + id + "</td>" +
+            "<td>" + name + "</td>" +
+            "<td>" + department + "</td>" +
+            "</tr>"
+
+        );
+
+
+        $("#status").text(
+            "New employee added successfully."
+        );
+
+
+        // Clear inputs
+
+        $("#empId").val("");
+
+        $("#empName").val("");
+
+        $("#department").val("");
+
+    });
+
+
+    // 3. SET - Update employee
+
+    $("#update").click(function() {
+
+        if (selectedRow == null) {
+
+            alert("Please select an employee.");
+
+            return;
+        }
+
+
+        let id = $("#empId").val();
+
+        let name = $("#empName").val();
+
+        let department = $("#department").val();
+
+
+        // Set values into table
+
+        selectedRow.find("td:eq(0)").text(id);
+
+        selectedRow.find("td:eq(1)").text(name);
+
+        selectedRow.find("td:eq(2)").text(department);
+
+
+        $("#status").text(
+            "Employee updated successfully."
+        );
+
+    });
+
+
+    // 4. REMOVE employee
+
+    $("#remove").click(function() {
+
+        if (selectedRow == null) {
+
+            alert("Please select an employee.");
+
+            return;
+        }
+
+
+        selectedRow.remove();
+
+        selectedRow = null;
+
+
+        $("#empId").val("");
+
+        $("#empName").val("");
+
+        $("#department").val("");
+
+
+        $("#status").text(
+            "Employee removed successfully."
+        );
+
+    });
+
+
+    // 5. CSS using css()
+
+    $("#changeColor").click(function() {
+
+        $("#status").css({
+
+            "background-color": "lightblue",
+
+            "color": "darkblue"
+
+        });
+
+    });
+
+
+    // 6. TABLE DIMENSIONS
+
+    $("#dimensions").click(function() {
+
+        let width = $("#employeeTable").width();
+
+        let height = $("#employeeTable").height();
+
+
+        $("#dimensionResult").text(
+
+            "Table Width: " + width +
+            " px | Table Height: " +
+            height + " px"
+
+        );
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
+
+JQUERY TRAVERSAL
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Employee Organization Explorer</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        .container {
+            width: 700px;
+            margin: 30px auto;
+        }
+
+        h1 {
+            color: #174ea6;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            border: none;
+            background-color: #1976d2;
+            color: white;
+            cursor: pointer;
+        }
+
+        #organization {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .project {
+            background-color: #dbeafe;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px solid #1976d2;
+        }
+
+        .team {
+            background-color: #e8f5e9;
+            padding: 12px;
+            margin: 10px;
+            border: 2px solid green;
+        }
+
+        .employee {
+            display: inline-block;
+            padding: 8px;
+            margin: 5px;
+            background-color: white;
+            border: 1px solid #999;
+            cursor: pointer;
+        }
+
+        .senior {
+            font-weight: bold;
+        }
+
+        .highlight {
+            background-color: yellow !important;
+            border: 3px solid red;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: white;
+            border: 2px solid #1976d2;
+            text-align: left;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>Employee Organization Explorer</h1>
+
+
+    <!-- Buttons -->
+
+    <button id="parent">
+        Show Parent Team
+    </button>
+
+    <button id="ancestors">
+        Show All Ancestors
+    </button>
+
+    <button id="projectEmployees">
+        Show Project Employees
+    </button>
+
+    <button id="teammates">
+        Show Teammates
+    </button>
+
+    <button id="senior">
+        Show Senior Employees
+    </button>
+
+    <button id="first">
+        First Employee
+    </button>
+
+    <button id="last">
+        Last Employee
+    </button>
+
+    <button id="second">
+        Second Employee
+    </button>
+
+    <button id="reset">
+        Reset
+    </button>
+
+
+    <!-- Organization -->
+
+    <div id="organization">
+
+        <div class="project">
+
+            <h2>Project Alpha</h2>
+
+
+            <!-- Development Team -->
+
+            <div class="team">
+
+                <h3>Development Team</h3>
+
+
+                <div
+                    class="employee"
+                    data-name="Arun">
+
+                    Arun - Developer
+
+                </div>
+
+
+                <div
+                    class="employee senior"
+                    data-name="Kavya">
+
+                    Kavya - Senior Developer
+
+                </div>
+
+
+                <div
+                    class="employee"
+                    data-name="Rahul">
+
+                    Rahul - Developer
+
+                </div>
+
+            </div>
+
+
+            <!-- Testing Team -->
+
+            <div class="team">
+
+                <h3>Testing Team</h3>
+
+
+                <div
+                    class="employee"
+                    data-name="Meena">
+
+                    Meena - Tester
+
+                </div>
+
+
+                <div
+                    class="employee senior"
+                    data-name="Priya">
+
+                    Priya - Senior Tester
+
+                </div>
+
+
+                <div
+                    class="employee"
+                    data-name="Karthik">
+
+                    Karthik - Tester
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="result">
+        Click an employee to select.
+    </div>
+
+</div>
+
+
+<script>
+
+$(document).ready(function() {
+
+    let selectedEmployee = null;
+
+
+    // Select employee
+
+    $(".employee").click(function() {
+
+        $(".employee").removeClass("highlight");
+
+        $(this).addClass("highlight");
+
+        selectedEmployee = $(this);
+
+        $("#result").text(
+            "Selected Employee : " +
+            $(this).data("name")
+        );
+
+    });
+
+
+    // 1. parent()
+
+    $("#parent").click(function() {
+
+        if (selectedEmployee == null) {
+
+            alert("Select an employee first.");
+
+            return;
+        }
+
+
+        $(".team").removeClass("highlight");
+
+        selectedEmployee.parent().addClass("highlight");
+
+
+        $("#result").text(
+            "Parent Team : " +
+            selectedEmployee.parent().find("h3").text()
+        );
+
+    });
+
+
+    // 2. parents()
+
+    $("#ancestors").click(function() {
+
+        if (selectedEmployee == null) {
+
+            alert("Select an employee first.");
+
+            return;
+        }
+
+
+        $(".project, .team").removeClass("highlight");
+
+        selectedEmployee.parents(".team").addClass("highlight");
+
+        selectedEmployee.parents(".project").addClass("highlight");
+
+
+        $("#result").text(
+            "All Ancestors highlighted: Team and Project"
+        );
+
+    });
+
+
+    // 3. closest()
+
+    $("#projectEmployees").click(function() {
+
+        if (selectedEmployee == null) {
+
+            alert("Select an employee first.");
+
+            return;
+        }
+
+
+        $(".project, .team, .employee")
+            .removeClass("highlight");
+
+
+        let project =
+            selectedEmployee.closest(".project");
+
+
+        project.find(".team").addClass("highlight");
+
+        project.find(".employee").addClass("highlight");
+
+
+        $("#result").text(
+            "All teams and employees in Project Alpha highlighted."
+        );
+
+    });
+
+
+    // 4. siblings()
+
+    $("#teammates").click(function() {
+
+        if (selectedEmployee == null) {
+
+            alert("Select an employee first.");
+
+            return;
+        }
+
+
+        $(".employee").removeClass("highlight");
+
+        selectedEmployee
+            .siblings(".employee")
+            .addClass("highlight");
+
+
+        $("#result").text(
+            "Teammates highlighted."
+        );
+
+    });
+
+
+    // 5. filter()
+
+    $("#senior").click(function() {
+
+        $(".employee").removeClass("highlight");
+
+
+        $(".employee")
+            .filter(".senior")
+            .addClass("highlight");
+
+
+        $("#result").text(
+            "Senior Employees: Kavya and Priya"
+        );
+
+    });
+
+
+    // 6. first()
+
+    $("#first").click(function() {
+
+        $(".employee").removeClass("highlight");
+
+        $(".employee").first().addClass("highlight");
+
+        $("#result").text(
+            "First Employee highlighted."
+        );
+
+    });
+
+
+    // 7. last()
+
+    $("#last").click(function() {
+
+        $(".employee").removeClass("highlight");
+
+        $(".employee").last().addClass("highlight");
+
+        $("#result").text(
+            "Last Employee highlighted."
+        );
+
+    });
+
+
+    // 8. eq()
+
+    $("#second").click(function() {
+
+        $(".employee").removeClass("highlight");
+
+        $(".employee").eq(1).addClass("highlight");
+
+        $("#result").text(
+            "Second Employee highlighted."
+        );
+
+    });
+
+
+    // Reset
+
+    $("#reset").click(function() {
+
+        $(".employee")
+            .removeClass("highlight");
+
+        $(".team")
+            .removeClass("highlight");
+
+        $(".project")
+            .removeClass("highlight");
+
+        selectedEmployee = null;
+
+        $("#result").text(
+            "Click an employee to select."
+        );
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
+
+LAB 4 JQUERY
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Lab Program 4 - jQuery Effects</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 600px;
+            margin: 30px auto;
+        }
+
+        h1 {
+            color: #174ea6;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            background-color: #1976d2;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0d47a1;
+        }
+
+        #product {
+            margin-top: 25px;
+            padding: 25px;
+            background-color: white;
+            border: 2px solid #1976d2;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        #product h2 {
+            color: #1976d2;
+            text-align: center;
+        }
+
+        #message {
+            margin-top: 15px;
+            color: green;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>Online Store</h1>
+
+    <button id="show">Show</button>
+
+    <button id="hide">Hide</button>
+
+    <button id="fade">Fade</button>
+
+    <button id="slide">Slide</button>
+
+    <button id="animate">Animate</button>
+
+    <button id="stop">Stop Animation</button>
+
+    <button id="callback">Callback</button>
+
+    <button id="chaining">Chaining</button>
+
+
+    <div id="product">
+
+        <h2>Product Details</h2>
+
+        <p>
+            <b>Product Name:</b> Laptop Pro
+        </p>
+
+        <p>
+            <b>Price:</b> ₹65,000
+        </p>
+
+        <p>
+            <b>Category:</b> Electronics
+        </p>
+
+        <p>
+            <b>Stock Status:</b> Available
+        </p>
+
+        <p>
+            <b>Description:</b>
+            A high performance laptop for work and play.
+        </p>
+
+    </div>
+
+
+    <div id="message"></div>
+
+</div>
+
+
+<script>
+
+$(document).ready(function() {
+
+
+    // 1. SHOW
+
+    $("#show").click(function() {
+
+        $("#product").show();
+
+    });
+
+
+    // 2. HIDE
+
+    $("#hide").click(function() {
+
+        $("#product").hide();
+
+    });
+
+
+    // 3. FADE
+
+    $("#fade").click(function() {
+
+        $("#product").fadeToggle(1000);
+
+    });
+
+
+    // 4. SLIDE
+
+    $("#slide").click(function() {
+
+        $("#product").slideToggle(1000);
+
+    });
+
+
+    // 5. ANIMATE
+
+    $("#animate").click(function() {
+
+        $("#product").animate({
+
+            width: "400px",
+            marginLeft: "80px"
+
+        }, 2000);
+
+    });
+
+
+    // 6. STOP
+
+    $("#stop").click(function() {
+
+        $("#product").stop();
+
+    });
+
+
+    // 7. CALLBACK
+
+    $("#callback").click(function() {
+
+        $("#message").text("");
+
+        $("#product").fadeOut(1000, function() {
+
+            $("#message").text(
+                "Animation completed successfully"
+            );
+
+        });
+
+    });
+
+
+    // 8. CHAINING
+
+    $("#chaining").click(function() {
+
+        $("#product")
+            .slideUp(500)
+            .slideDown(500)
+            .fadeOut(500)
+            .fadeIn(500);
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
+
+
+
+
