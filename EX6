@@ -1,0 +1,230 @@
+1) Digital clock
+<!--URK24CS1160-->
+<!--DIGITAL CLOCK-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Digital Clock</title>
+</head>
+
+<body>
+<h1>Digital Clock</h1>
+
+<span id="time"></span>
+
+<script>
+function display() {
+var d = new Date();
+var h = d.getHours();
+var m = d.getMinutes();
+var s = d.getSeconds();
+
+if (h < 10)
+h = "0" + h;
+
+if (m < 10)
+m = "0" + m;
+
+if (s < 10)
+s = "0" + s;
+
+23CS2049 WEB TECHNOLOGY LAB
+URK24CS1160
+document.getElementById("time").innerHTML =
+h + ":" + m + ":" + s;
+}
+
+
+2) Change Background colour
+
+<!--URK24CS1160-->
+<!--DYNAMIC BACKGROUND-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dynamic Background</title>
+<style>
+body {
+text-align: center;
+font-size: 30px;
+}
+
+h1 {
+font-size: 50px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Dynamic Background!</h1>
+<script>
+
+function setBackgroundColor() {
+
+var red = Math.floor(Math.random() * 255);
+
+23CS2049 WEB TECHNOLOGY LAB
+URK24CS1160
+var blue = Math.floor(Math.random() * 255);
+
+var green = Math.floor(Math.random() * 255);
+
+var color =
+"rgb(" + red + "," + green + "," + blue + ")";
+
+document.getElementsByTagName("body")[0].style =
+"background-color:" + color;
+}
+setBackgroundColor();
+
+setInterval(setBackgroundColor, 30000);
+
+</script>
+
+</body>
+
+</html>
+
+3) Increase fontsize when mouse moves
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mouse Events</title>
+</head>
+<body>
+<h1>Change Font Size</h1>
+<p id="para1"
+onmouseover="incSize()"
+onmouseout="decSize()">
+Move your cursor over me to zoom in...
+
+</p>
+<script>
+function incSize() {
+document.getElementById("para1").style.fontSize = "28px";
+}
+function decSize() {
+document.getElementById("para1").style.fontSize = "16px";
+}
+
+</script>
+
+</body>
+</html>
+
+
+4) Move and stop car
+<!DOCTYPE html>
+<html>
+<head>
+<title>Moving Car</title>
+</head>
+<body>
+
+<h1>Moving Car</h1>
+
+<img id="img"
+src="car.png"
+width="150"
+style="position:relative; left:0px;">
+
+<br><br>
+
+<button onclick="moveRight()">Start</button>
+
+<button onclick="stop()">Stop</button>
+
+<script>
+
+var animate;
+
+var imgObj = document.getElementById("img");
+
+function moveRight() {
+
+23CS2049 WEB TECHNOLOGY LAB
+URK24CS1160
+imgObj.style.left =
+parseInt(imgObj.style.left) + 1 + "px";
+
+animate = setTimeout(moveRight, 20);
+}
+
+function stop() {
+clearTimeout(animate);
+imgObj.style.left = "0px";
+}
+
+</script>
+
+</body>
+</html>
+
+5) Students details
+<!DOCTYPE html>
+<html>
+<head>
+<title>Moving Car</title>
+</head>
+
+<body>
+
+<h1>Moving Car</h1>
+
+<img id="img"
+src="car.png"
+width="150"
+style="position:relative; left:0px;">
+
+<br><br>
+
+<button onclick="moveRight()">Start</button>
+
+<button onclick="stop()">Stop</button>
+
+<script>
+
+var animate;
+
+23CS2049 WEB TECHNOLOGY LAB
+URK24CS1160
+
+var imgObj = document.getElementById("img");
+
+function moveRight() {
+
+imgObj.style.left =
+parseInt(imgObj.style.left) + 1 + "px";
+
+animate = setTimeout(moveRight, 20);
+}
+
+function stop() {
+
+clearTimeout(animate);
+
+imgObj.style.left = "0px";
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+setInterval(display, 1000);
+display();
+</script>
+
+</body>
+</html>
