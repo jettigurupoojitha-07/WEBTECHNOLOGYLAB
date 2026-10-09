@@ -1,0 +1,183 @@
+App.js
+
+const http = require("http");
+const fs = require("fs");
+const querystring = require("querystring");
+const { MongoClient } = require("mongodb");
+const url = "mongodb://127.0.0.1:27017";
+const client = new MongoClient(url);
+const dbName = "user_registration";
+const server = http.createServer((req, res) => {
+    if (req.method === "GET" && req.url === "/") {
+        fs.readFile("home.html", (err, data) => {
+            if (err) {
+                res.writeHead(500);
+                res.end("Error loading page");
+                return;
+            }
+
+            res.writeHead(200, {
+                "Content-Type": "text/html"
+            });
+
+            res.end(data);
+        });
+    }
+    else if (req.method === "POST" && req.url === "/server") {
+        let body = "";
+        req.on("data", (chunk) => {
+            body += chunk.toString();
+        });
+        req.on("end", async () => {
+            console.log("Form data received:");
+            console.log(body);
+            const formData = querystring.parse(body);
+            console.log("Name:", formData.name);
+            console.log("Password:", formData.password);
+            console.log("Age:", formData.age);
+            console.log("Mobile:", formData.mobile);
+            console.log("Email:", formData.email);
+            console.log("Gender:", formData.gender);
+            console.log("Skills:", formData.skills);
+            console.log("State:", formData.state);
+            const db = client.db(dbName);
+            const usersCollection = db.collection("users");
+            const user = {
+                name: formData.name,
+                password: formData.password,
+                age: formData.age,
+                mobile: formData.mobile,
+                email: formData.email,
+                gender: formData.gender,
+                skills: formData.skills,
+                state: formData.state
+            };
+            await usersCollection.insertOne(user);
+            console.log("Data inserted into MongoDB successfully");
+            const users = await usersCollection.find().toArray();
+            console.log("Data retrieved from MongoDB:");
+console.log(users);
+let table = `
+<h1>Registration Details</h1>
+<table border="1" cellpadding="10">
+<tr>
+    <th>Name</th>
+    <th>Password</th>
+    <th>Age</th>
+    <th>Mobile</th>
+    <th>Email</th>
+    <th>Gender</th>
+    <th>Skills</th>
+    <th>State</th>
+</tr>
+`;
+users.forEach((user) => {
+    table += `
+    <tr>
+        <td>${user.name}</td>
+        <td>${user.password}</td>
+        <td>${user.age}</td>
+        <td>${user.mobile}</td>
+        <td>${user.email}</td>
+        <td>${user.gender}</td>
+        <td>${user.skills}</td>
+        <td>${user.state}</td>
+    </tr>
+    `;
+
+});
+table += `
+</table>
+`;
+res.writeHead(200, {
+    "Content-Type": "text/html"
+});
+res.end(table);
+         
+        });
+    }
+
+});
+async function connectDB() {
+    try {
+        await client.connect();
+        const db = client.db(dbName);
+        const usersCollection = db.collection("users");
+        console.log("MongoDB connected successfully");
+        console.log("Database selected:", dbName);
+        console.log("Collection selected: users");
+    } catch (error) {
+        console.log("MongoDB connection failed:", error);
+    }
+}
+connectDB();
+server.listen(6001, () => {
+    console.log("Server running at http://localhost:6001");
+});
+
+
+
+
+
+//home.html
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+</head>
+<body>
+    <h1>User Registration Form</h1>
+    <form action="/server" method="POST">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+        <br><br>
+        <label>Password:</label>
+        <input type="password" name="password" required>
+        <br><br>
+        <label>Age:</label>
+        <input type="number" name="age" required>
+        <br><br>
+        <label>Mobile Number:</label>
+        <input type="tel" name="mobile" required>
+        <br><br>
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <br><br>
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="Male" required>
+        Male
+        <input type="radio" name="gender" value="Female">
+        Female
+        <br><br>
+        <label>Skills:</label>
+        <input type="checkbox" name="skills" value="JavaScript">
+        JavaScript
+
+        <input type="checkbox" name="skills" value="Python">
+        Python
+        <input type="checkbox" name="skills" value="Java">
+        Java
+        <input type="checkbox" name="skills" value="C++">
+        C++
+        <br><br>
+        <label>State:</label>
+        <select name="state" required>
+            <option value="">Select State</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+        </select>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+
+
+ 
+
+     
